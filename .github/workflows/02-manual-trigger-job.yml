@@ -4,19 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  train:
+  train-model:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repo
-      uses: actions/checkout@main
-    - name: Install az ml extension
-      run: az extension add -n ml -y
-    - name: Azure login
-      uses: azure/login@v1
-    - name: Trigger azure job
+    - name: Trigger Azure Machine Learning job
       run: |
         az ml job create --file src/job.yml
-      with:
-        creds: ${{secrets.AZURE_CREDENTIALS}}
-
-
