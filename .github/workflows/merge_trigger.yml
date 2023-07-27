@@ -1,0 +1,13 @@
+name: merge trigger
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      -name: placeholder
+      run: |
+        echo "Helo world"
