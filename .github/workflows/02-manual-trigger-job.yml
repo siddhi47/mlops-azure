@@ -13,9 +13,10 @@ jobs:
       run: az extension add -n ml -y
     - name: Azure login
       uses: azure/login@v1
-    - name: job
-      run: az ml job create --file src/job.yml
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
 
+    - name: trigger job
+      run: |
+        az ml job create --file src/job.yml
 
