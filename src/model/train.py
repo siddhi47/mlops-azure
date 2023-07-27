@@ -19,7 +19,7 @@ def main(args):
     X_train, X_test, y_train, y_test = split_data(df)
 
     # train model
-    train_model(args.reg_rate, X_train, X_test, y_train, y_test)
+    train_model(args.reg_rate, X_train,  y_train)
 
 
 def get_csvs_df(path):
@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
     # parse args
     args = parse_args()
-
+    print(args)
     # run main function
     main(args)
 
