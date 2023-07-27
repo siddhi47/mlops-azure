@@ -38,6 +38,6 @@ jobs:
 
     - name: trigger job
       run: |
-        az ml prod_job create --file src/job.yml -g test -w azure-ml
+        az ml job create --file src/prod_job.yml -g test -w azure-ml
 
 
